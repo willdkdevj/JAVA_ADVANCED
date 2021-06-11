@@ -11,7 +11,7 @@ Utilizando alguns métodos para interajir com as Lists afim de descubrir seus va
 ```
 
 ### Iterando em uma List
-Percorrer os valores de uma List para realizar uma operação
+Percorrer os valores de uma List para realizar uma operação utilizando o ITERATOR
 ```java
     Iterator<Double> iterator = notas.iterator();
     Double soma = 0D;
@@ -19,6 +19,17 @@ Percorrer os valores de uma List para realizar uma operação
     while(iterator.hasNext()){
         Double valorEncontrado = iterator.next();
         soma += valorEncontrado;
+    }
+    System.out.println("O resultado é " + soma);
+```
+
+Realizando a mesma operação, mas utilizando o FOR EACH
+```java
+    List<Double> notas = new ArrayList<>(Arrays.asList( 8.9, 9.7, 9.9, 7.9, 8.5));
+    Double soma = 0D;
+
+    for(Double nota : notas){
+        soma += nota;
     }
     System.out.println("O resultado é " + soma);
 ```
