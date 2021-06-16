@@ -71,7 +71,7 @@ Com Comparator podemos criar uma classe especifica para comparar um determinado 
 ```
 
 Agora temos duas possibilidade de invocar nossa classe de comparação para permitir que a lista de gatos seja ordenada.
-```
+```java
     System.out.println("---Ordem Idade---")
     /* 
      * Utilizando a Classe Collections passando como parâmetros a lista (List-Collection)
@@ -84,6 +84,16 @@ Agora temos duas possibilidade de invocar nossa classe de comparação para perm
      * onde passamos como parâmetro um objeto do tipo Comparator ou que o implemente
      */
      meusgatos.sort(new ComparaIdadeGatos());
+```
+
+Também para simplificar o código, ao invés de criar uma classe auxiliar para implementar a **Interface Funcional** *Comparator*, é possível invoca-la no método já instanciando uma classe, utilizando o conceito de **Classe Anômina**.
+```java
+    meusGatos.sort(new Comparator<Gato>() {
+        @Override
+        public int compare(Gato g1, Gato g2){
+            return Integer.comparte(g1.getIdade(), g2.getIdade());
+        }
+    })
 ```
 
 Desta forma, poderiamos realizar este mesmo procedimento com qualquer atributo da nossa classe utilizando esta lógica.
