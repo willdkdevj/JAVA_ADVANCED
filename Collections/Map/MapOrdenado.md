@@ -72,3 +72,8 @@ Agora criamos uma coleção Set que receberá um Map para comparação, do tipo 
     System.out.println(meuLivroOrdenacao);
 ```
 
+### Implementando Interface no Próprio Conjunto Map com o Auxílio do Set
+É possível passar no construtor do Set, no caso o TreeSet, uma implementação de **Interface Funcional** a fim de ordenar o conjunto de Map. Desta forma, o exemplo abaixo irá ordenar a nossa classe Livro pelo ordem de páginas.
+```java
+    Set<Map<String, Livro>> setLivro = new TreeSet<>(meusLivros)
+```
